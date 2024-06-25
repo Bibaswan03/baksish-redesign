@@ -19,7 +19,7 @@ function TopBanner() {
   };
   return (
     <>
-      <div className="w-screen lg:h-[500px] h-[400px] relative bg-black/10 px-10 pt-4 ">
+      <div className="w-screen lg:h-[500px] h-[400px] relative bg-black/20 px-10 pt-4 ">
         <Image
           src={bgimg}
           alt="bgimg"
@@ -76,7 +76,7 @@ function TopBanner() {
           {/*HamburgerMenu */}
         </div>
         <div className="items-center justify-center flex flex-col lg:my-56 my-44" >
-          <TypedText/>
+         <div className="h-14"> <TypedText/></div>
           <button className="bg-yellow-400 p-4 py-2 rounded-md text-white text-xl hover:scale-105 duration-500">Request a demo</button>
         </div>
       </div>
