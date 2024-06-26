@@ -3,12 +3,12 @@ import { ReactTyped } from "react-typed";
 
 const TypedText = () => {
   return (
-    <div className="typed-text m-4 text-2xl font-semibold font-serif poppins-semibold  text-[#FFF9EA]">
+    <div className="typed-text m-4 lg:text-2xl text-xl font-semibold font-serif poppins-semibold  text-[#FFF9EA]">
       <ReactTyped
         strings={[
-          "Hello, welcome to our website!",
-          "We offer great services.",
-          "Contact us for more information."
+          "Accelarate Your Ratings",
+          "Get Your Menu Online",
+          "Increase Your Staffs Income",
         ]}
         typeSpeed={50}
         backSpeed={30}

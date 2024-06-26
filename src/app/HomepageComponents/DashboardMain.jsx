@@ -1,13 +1,18 @@
 import React from "react";
 import TopBanner from "./TopBanner";
+//import WhatWeDo from "./WhatWeDo";
+import Layout from "../Components/Layout";
 import WhatWeDo from "./WhatWeDo";
 
 function DashboardMain() {
   return (
-    <div>
+    <Layout>
       <TopBanner />
+      <div id="content-section">
+        {/* Your content goes here */}
+      </div>
       <WhatWeDo />
-    </div>
+    </Layout>
   );
 }
 

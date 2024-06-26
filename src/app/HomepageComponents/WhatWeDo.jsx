@@ -141,7 +141,7 @@ function WhatWeDo() {
         <Image
         height={1000}
         width={1000}
-          src="https://i.ibb.co/5W3fdL5/steptodown-com510142-removebg-preview.png"
+          src="https://i.ibb.co/kmRrtb6/steptodown-com510142-removebg-preview-removebg-preview.png"
           className="w-full h-[80%] object-cover"
           alt=""
         />
