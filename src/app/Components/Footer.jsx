@@ -8,7 +8,7 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="bg-[#450b46] text-[#FFF9EA] py-12 lg:px-20 poppins-medium">
+    <footer className="bg-[#441029] text-[#FFF9EA] py-12 lg:px-20 poppins-medium">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4">
         <div>
           <div className="bg-[#FFF9EA] w-fit p-1 mb-4 rounde-lg">
