@@ -33,7 +33,7 @@ function TopBanner() {
           <TypedText />
         </div>
         <Link
-          href="/Collaboratewithus"
+          href="/Signup"
           className="bg-yellow-400/90 font-semibold p-4 py-2 rounded-md text-[#FFF9EA] text-xl hover:scale-105 duration-500"
         >
           Collaborate with us
