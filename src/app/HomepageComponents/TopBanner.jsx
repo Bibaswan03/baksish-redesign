@@ -37,6 +37,8 @@ function TopBanner() {
         <Link
           href="/Collaboratewithus"
           className="bg-[#f6ddc2] font-bold   p-4 py-2 rounded-md text-[#262217] text-xl hover:scale-105  animate-pulse duration-700"
+          // href="/Signup"
+          // className="bg-yellow-400/90 font-semibold p-4 py-2 rounded-md text-[#FFF9EA] text-xl hover:scale-105 duration-500"
         >
           Collaborate with us
         </Link>
