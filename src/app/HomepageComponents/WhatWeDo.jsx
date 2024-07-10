@@ -56,13 +56,7 @@ function WhatWeDo() {
           <hr className="border-[#661268] hr-animate border-2 rounded mb-2" />
         </div>
         <p className="poppins-regular lg:pr-10">
-          Baksish allows restaurants to display their menus digitally using QR
-          codes. Customers can directly access the menu of the specific
-          restaurant by scanning the QR code at their table. This eliminates the
-          hassle for physical menus, providing a more hygienic and contactless
-          dining experience. The digital menu can be easily updated by the
-          restaurant, ensuring customers always have access to the latest
-          offerings.
+          Baksish allows restaurants to display their menus digitally.Our smart kitchen table technology allows customers to easily order directly from their phones, eliminating the hassle of physical menus and streamlining the ordering process. With our user-friendly interface, customers can browse the menu, customize their orders, and submit them to the manager with just a few taps.
         </p>
       </div>
       <div className=" lg:w-1/2 ">
@@ -86,7 +80,7 @@ function WhatWeDo() {
           <hr className="border-[#661268] hr-animate border-2 rounded mb-2" />
         </div>
         <p className="poppins-regular ">
-        Baksish includes a built-in tipping system that allows customers to easily tip their servers directly through the website. This brings back the culture of tipping process and ensures that gratuities are accurately recorded and distributed to the appropriate staff members. The integrated tipping system provides a convenient and transparent way for customers to show their appreciation for the service they receive
+        Baksish introduces the ability to view the menu on their phones, customers can make informed decisions and explore the full range of offerings available.We understand that sometimes customers may need to make changes to their orders. With our smart kitchen table tech, customers can easily add to their existing orders until the bill is finalized.
         </p>
       </div>
       <div className=" lg:w-1/2 ">
@@ -110,7 +104,7 @@ function WhatWeDo() {
           <hr className="border-[#661268] hr-animate border-2 rounded mb-2" />
         </div>
         <p className="poppins-regular lg:pr-10">
-        You are a foodie, and you have loved various dishes of various cuisines at various restaurants. Sometimes you even wanted to give Baksish to cook also. Well now you can. Loved the taste, Reward the chef directly through our application.
+        Our smart kitchen table tech seamlessly integrates with the kitchen side of the software, allowing waiters to act as mediators between customers and the kitchen staff. This ensures that orders are accurately communicated and fulfilled, while also providing real-time updates on the status of each order.
         </p>
       </div>
       <div className=" lg:w-1/2 ">
@@ -134,7 +128,7 @@ function WhatWeDo() {
           <hr className="border-[#661268] hr-animate border-2 rounded mb-2" />
         </div>
         <p className="poppins-regular lg:pr-10">
-        When a customer completes their payment through your application, they are automatically redirected to the restaurant's Google ratings page. This integration allows customers to easily leave a review and rating for the restaurant they just visited. By directing customers Baksish encourages feedback and helps restaurants improve their online reputation and visibility on the most popular review platform. 
+        With Baksish managers can track every order in real-time, ensuring that no detail is missed. This feature allows for quick and accurate updates on the status of each order, helping to maintain a high level of service and customer satisfaction.Managers can also edit the menu in real-time, adding or removing dishes as needed. This feature ensures that the menu is always up-to-date and accurate.Our system generates detailed reports for managers, providing insights into weekly and monthly orders. This data helps managers analyze trends, identify areas for improvement, and make informed decisions to enhance the business.
         </p>
       </div>
       <div className=" lg:w-1/2 ">

@@ -6,12 +6,12 @@ const TypedText = () => {
     <div className="typed-text m-4 lg:text-2xl text-xl font-semibold font-serif poppins-semibold  text-[#FFF9EA]">
       <ReactTyped
         strings={[
-          "Accelarate Your Ratings",
-          "Get Your Menu Online",
-          "Increase Your Staffs Income",
+          "Transforming dining experience.",
+          "A table-to-kitchen ordering tech.",
+          "Enhancing customer satisfaction.",
         ]}
-        typeSpeed={50}
-        backSpeed={30}
+        typeSpeed={60}
+        backSpeed={60}
         loop
         className='drop-shadow-2xl'
       />

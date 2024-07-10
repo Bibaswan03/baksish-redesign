@@ -18,7 +18,7 @@ function Footer() {
               className="w-28 h-10 drop-shadow-xl "
             />
           </div>
-          <p>Your gateway to appreciation</p>
+          <p>Table-to-kitchen tech</p>
         </div>
         <div>
           <h3 className="text-xl font-semibold mb-4">Navigations</h3>

@@ -5,19 +5,19 @@ import Header from "../Components/Header";
 function AboutUs() {
   return (
     <div>
-         <Header/>
+      <Header/>
       <div className="bg-transparent ">
         <div className="max-w-4xl mx-auto px-4">
-        <hr className="h-px mt-8 mb-2 bg-yellow-800 border-0 "/>
+          <hr className="h-px mt-8 mb-2 bg-yellow-800 border-0 " />
           <div className="bg-white p-8 rounded-lg shadow-xl">
             <h1 className="text-3xl flex items-center justify-center font-bold mb-6 text-gray-800 text-center">
               About <span className="text-yellow-500 text-4xl"><Image
-                  className="ml-2 w-28"
-                  src={logo}
-                  height={100}
-                  width={100}
-                  alt="login image"
-                /> </span>
+                className="ml-2 w-28"
+                src={logo}
+                height={100}
+                width={100}
+                alt="login image"
+              /> </span>
             </h1>
             <p className="text-lg mb-6 text-gray-800 leading-relaxed">
               Welcome to our restaurant tipping platform! We aim to
@@ -44,7 +44,7 @@ function AboutUs() {
               revolution!
             </p>
           </div>
-          <hr className="h-px mt-3 mb-8 bg-yellow-700 border-0 "/>
+          <hr className="h-px mt-3 mb-8 bg-yellow-700 border-0 " />
         </div>
       </div>
     </div>
