@@ -40,7 +40,7 @@ function TopBanner() {
           // href="/Signup"
           // className="bg-yellow-400/90 font-semibold p-4 py-2 rounded-md text-[#FFF9EA] text-xl hover:scale-105 duration-500"
         >
-          Collaborate with us
+          Book your FREE trial
         </Link>
       </div>
       <FaAngleDown
