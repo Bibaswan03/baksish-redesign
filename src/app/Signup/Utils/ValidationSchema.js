@@ -1,20 +1,20 @@
 import * as Yup from "yup";
 
 export const validationSchema1 = Yup.object({
-  name: Yup.string().required("Full name is required"),
+  name: Yup.string().required("Full restaurantname is required"),
   email: Yup.string()
-    .email("Invalid email address")
-    .required("Email is required"),
+    .email("Invalid restaurantemail address")
+    .required("restaurantemail is required"),
   phoneNo: Yup.string()
     .matches(/^\d{10}$/, "Phone number must be exactly 10 digits")
     .required("Phone number is required"),
 });
 
 export const validationSchema2 = Yup.object({
-  username: Yup.string().required("Full name is required"),
+  username: Yup.string().required("Full restaurantname is required"),
   password: Yup.string()
     .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?#&])[A-Za-z\d@$!%*#?&]{8,}$/,
       "Password must contain at least 8 characters, one uppercase, one lowercase, one number and one special case character"
     )
     .required("Password is required"),
@@ -24,41 +24,51 @@ export const validationSchema2 = Yup.object({
 });
 
 export const validationSchema3 = Yup.object({
-  restaurantname: Yup.string().required("Restaurant name is required"),
+  restaurantname: Yup.string().required(
+    "Restaurant restaurantname is required"
+  ),
   restaurantemail: Yup.string()
-    .email("Invalid email address")
-    .required("Email is required"),
+    .email("Invalid restaurantemail address")
+    .required("restaurantemail is required"),
   restaurantphoneNo: Yup.string()
     .matches(/^\d{10}$/, "Phone number must be exactly 10 digits")
     .required("Phone number is required"),
   restaurantwebsite: Yup.string().url("Invalid URL").notRequired(),
 });
+
 export const validationSchema4 = Yup.object({
-  opensAt: Yup.string().required("Opening time is required"),
-  closesAt: Yup.string().required("Closing time is required"),
-  chef: Yup.number()
+  restaurantopeninghours: Yup.string().required("Opening time is required"),
+  restaurantclosinghours: Yup.string().required("Closing time is required"),
+  noofchef: Yup.number()
     .min(0, "Number of chefs must be at least 0")
     .required("Number of chefs is required"),
-  seating: Yup.number()
+  noofseatingcapacity: Yup.number()
     .min(0, "Seating capacity must be at least 0")
     .required("Seating capacity is required"),
-  tables: Yup.number()
+  nooftables: Yup.number()
     .min(0, "Number of tables must be at least 0")
     .required("Number of tables is required"),
-  employees: Yup.number()
+  noofemployees: Yup.number()
     .min(0, "Number of employees must be at least 0")
     .required("Number of employees is required"),
-  waiter: Yup.number()
+  noofwaiters: Yup.number()
     .min(0, "Number of waiters must be at least 0")
     .required("Number of waiters is required"),
-  pic: Yup.mixed()
-    .required("Restaurant image is required")
+  restaurantimage: Yup.mixed().required("Restaurant image is required"),
 });
-export const validationSchema5 = Yup.object({
-  address: Yup.string()
-    .required("Restaurant address is required")
-    .min(5, "Restaurant address must be at least 5 characters long"),
-  description: Yup.string()
-    .required("Restaurant description is required")
-    .min(10, "Restaurant description must be at least 10 characters long"),
+const gstinRegex = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}[Z]{1}[0-9A-Z]{1}$/;
+
+export const validationSchema5 = Yup.object().shape({
+  restaurantaddress: Yup.string()
+    .required('Restaurant address is required'),
+  restaurantdescription: Yup.string()
+    .required('Restaurant description is required'),
+  sgst: Yup.string()
+    .required('SGST is required'),
+  cgst: Yup.string()
+    .required('CGST is required'),
+  gstin: Yup.string()
+    .matches(gstinRegex, 'Invalid GSTIN format')
+    .required('GSTIN is required'),
 });
+

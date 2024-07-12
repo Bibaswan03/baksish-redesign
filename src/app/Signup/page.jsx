@@ -9,20 +9,47 @@ import Page3 from "./Page3";
 import Page4 from "./Page4";
 import Page5 from "./Page5";
 import LinearDeterminate from "./ProgressBar";
+import { v4 as uuidv4 } from 'uuid';
 
 const page = () => {
-  const [values, setValues] = useState({});
+
+  const [values, setValues] = useState({
+    restaurantname: "",
+    restaurantid: "RES_"+uuidv4(),
+    restaurantlocation: "",
+    restaurantphoneNo: "",
+    restaurantemail: "",
+    restaurantwebsite: "",
+    restaurantaddress: "",
+    restaurantopeninghours: "",
+    restaurantclosinghours: "",
+    restaurantdescription: "",
+    restaurantimage: "",
+    noofchef: "",
+    noofemployees: "",
+    nooftables: "",
+    noofwaiters: "",
+    noofseatingcapacity: "",
+    sgst: "",
+    cgst: "",
+    gstin: "",
+    verified: false,
+    username: "",
+    password: "",
+    email: "",
+    name: "",
+    phoneNo: "",
+  });
   const appendvalues = (value) => {
-    
     setValues((prevValues) => ({
       ...prevValues,
       ...value,
     }));
   };
 
-  useEffect(() => {
-    console.log(values);
-  }, [values]);
+  // useEffect(() => {
+  //   console.log(values);
+  // }, [values]);
   // useEffect(() => {
   //   appendvalues("name", "sudip");
   // }, []);
