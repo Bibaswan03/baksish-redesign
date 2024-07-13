@@ -85,6 +85,7 @@ const handler = async (req, res) => {
         restaurant_name: restaurantname,
         sgst: sgst,
         cgst: cgst,
+        nooftables: nooftables,
       });
       await resitems.save();
 

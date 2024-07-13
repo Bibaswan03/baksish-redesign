@@ -33,12 +33,12 @@ function Page1({ appendvalues, values, page, handleForward, handleBackward }) {
 
       <h2 className="text-3xl font-bold text-center text-rose-800 -mb-5">Create Account</h2>
 
-      <h2 className="text-center text-rose-800">To subscribe Baksish</h2>
+      <h3 className="text-center text-rose-800">To subscribe Baksish</h3>
       <form onSubmit={formik.handleSubmit}>
         <div className="flex flex-col space-y-6">
           <div className="relative">
             <label htmlFor="name" className="text-sm text-gray-400">
-              Full Name
+              Full Name&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
               onChange={formik.handleChange}
@@ -59,7 +59,7 @@ function Page1({ appendvalues, values, page, handleForward, handleBackward }) {
 
           <div className="relative">
             <label htmlFor="email" className="text-sm text-gray-400">
-              Email
+              User's Email&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
               onChange={formik.handleChange}
@@ -80,7 +80,7 @@ function Page1({ appendvalues, values, page, handleForward, handleBackward }) {
 
           <div className="relative">
             <label htmlFor="phoneNo" className="text-sm text-gray-400">
-              Phone Number
+              Phone Number&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
               onChange={formik.handleChange}
@@ -90,7 +90,7 @@ function Page1({ appendvalues, values, page, handleForward, handleBackward }) {
               id="phoneNo"
               name="phoneNo"
               min={1000000000}
-              placeholder="+91 XXXXX XXXXX"
+              placeholder="XXXXX XXXXX"
               className="w-full px-3 py-2 border-b border-gray-300 focus:outline-none"
             />
             {formik.errors.phoneNo && formik.touched.phoneNo ? (

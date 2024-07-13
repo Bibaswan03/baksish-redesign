@@ -27,22 +27,20 @@ function Page3({ appendvalues, values, page, handleForward, handleBackward }) {
     },
   });
 
-
-  
   return (
     <div className="w-full max-w-md p-8 space-y-6 relative h-[700px] lg:h-[650px] bg-white rounded-lg shadow-md">
       <div className="absolute top-0 left-0 right-0">
         <LinearDeterminate currentProgress={40} />
       </div>
-      <h2 className="text-left text-rose-800 -mb-5">
-        <KeyboardBackspaceIcon onClick={() => handleBackward(page)} /> Go back
+      <h2 onClick={() => handleBackward(page)} className="text-left text-rose-800 -mb-5">
+        <KeyboardBackspaceIcon/> Go back
       </h2>
       <h2 className="text-3xl font-bold text-left text-rose-800">Fill Restaurant Details</h2>
       <form onSubmit={formik.handleSubmit}>
         <div className="flex flex-col space-y-4">
           <div className="relative">
             <label htmlFor="restaurantname" className="text-sm text-gray-400">
-              Restaurant Name
+              Restaurant Name&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -63,7 +61,7 @@ function Page3({ appendvalues, values, page, handleForward, handleBackward }) {
 
           <div className="relative">
             <label htmlFor="restaurantemail" className="text-sm text-gray-400">
-              Restaurant Email
+              Restaurant Email&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
               type="email"
@@ -72,7 +70,7 @@ function Page3({ appendvalues, values, page, handleForward, handleBackward }) {
               onBlur={formik.handleBlur}
               value={formik.values.restaurantemail}
               name="restaurantemail"
-              placeholder=" "
+              placeholder="your_email@example.com"
               className="w-full px-3 py-2 border-b border-gray-300 focus:outline-none"
             />
             {formik.errors.restaurantemail && formik.touched.restaurantemail ? (
@@ -84,7 +82,7 @@ function Page3({ appendvalues, values, page, handleForward, handleBackward }) {
 
           <div className="relative">
             <label htmlFor="restaurantphoneNo" className="text-sm text-gray-400">
-              Restaurant Phone Number
+              Restaurant Phone Number&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -123,6 +121,9 @@ function Page3({ appendvalues, values, page, handleForward, handleBackward }) {
                 {formik.errors.restaurantwebsite}
               </p>
             ) : null}
+            <p className="text-xs text-gray-500 mt-1">
+              # Provide your restaurant's website URL for better visibility.
+            </p>
           </div>
         </div>
         <button

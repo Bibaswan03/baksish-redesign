@@ -1,4 +1,5 @@
-"use client";
+// Page2.js
+
 import React, { useState } from "react";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import LinearDeterminate from "./ProgressBar";
@@ -33,15 +34,15 @@ function Page2({ appendvalues, values, page, handleForward, handleBackward }) {
       <div className="absolute top-0 left-0 right-0">
         <LinearDeterminate currentProgress={20} />
       </div>
-      <h2 className="text-left text-rose-800 -mb-5">
-        <KeyboardBackspaceIcon onClick={() => handleBackward(page)} /> Go back
+      <h2 onClick={() => handleBackward(page)} className="text-left text-rose-800 -mb-5">
+        <KeyboardBackspaceIcon  /> Go back
       </h2>
       <h2 className="text-3xl font-bold text-left text-rose-800">Fill Personal Details</h2>
       <form onSubmit={formik.handleSubmit}>
         <div className="flex flex-col space-y-4">
           <div className="relative">
             <label htmlFor="username" className="text-sm text-gray-400">
-              Username
+              Username&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -62,7 +63,7 @@ function Page2({ appendvalues, values, page, handleForward, handleBackward }) {
 
           <div className="relative">
             <label htmlFor="password" className="text-sm text-gray-400">
-              Password
+              Password&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
               type={showPassword ? "text" : "password"}
@@ -83,7 +84,7 @@ function Page2({ appendvalues, values, page, handleForward, handleBackward }) {
 
           <div className="relative">
             <label htmlFor="confirmpassword" className="text-sm text-gray-400">
-              Confirm Password
+              Confirm Password&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
               type={showPassword ? "text" : "password"}

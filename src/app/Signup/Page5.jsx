@@ -84,8 +84,8 @@ function Page5({
         <LinearDeterminate currentProgress={100} />
         <Toaster />
       </div>
-      <h2 className="text-left text-rose-800 -mb-5 tracking-widest text-sm">
-        <KeyboardBackspaceIcon onClick={() => handleBackward(page)} />{" "}
+      <h2 onClick={() => handleBackward(page)}  className="text-left text-rose-800 -mb-5 tracking-widest text-sm">
+        <KeyboardBackspaceIcon />{" "}
         Go back
       </h2>
       <h2 className="text-3xl font-bold text-left text-rose-800">
@@ -100,7 +100,7 @@ function Page5({
             onBlur={handleBlur}
             value={formValues.restaurantaddress}
             name="restaurantaddress"
-            placeholder="Enter restaurant address"
+            placeholder="Enter restaurant address*"
             className="w-full px-3 py-2 border-b border-gray-300 focus:outline-none"
             disabled={isSubmitting}
           />
@@ -128,7 +128,7 @@ function Page5({
                 </p>
               ) : null}
               <label className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[14px] font-normal leading-tight text-rose-950 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-gray-300 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-gray-300 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-gray-400 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-rose-500">
-                Restaurant description
+                Restaurant description&nbsp;<span className="text-red-500 ">*</span>
               </label>
             </div>
           </div>
@@ -148,7 +148,7 @@ function Page5({
             <option value="9">9%</option>
           </select>
           {errors.sgst && touched.sgst ? (
-            <p className="form-error p-[2px] text-[0.65rem] text-black">
+            <p className="form-error p-[2px] text-rose-500">
               {errors.sgst}
             </p>
           ) : null}
@@ -175,7 +175,7 @@ function Page5({
 
           <div className="relative">
             <label htmlFor="gstin" className="text-sm text-gray-400">
-              GSTIN
+              GSTIN&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
               onChange={handleChange}

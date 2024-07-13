@@ -1,3 +1,5 @@
+// Utils/ValidationSchema.js
+
 import * as Yup from "yup";
 
 export const validationSchema1 = Yup.object({
@@ -14,7 +16,7 @@ export const validationSchema2 = Yup.object({
   username: Yup.string().required("Full restaurantname is required"),
   password: Yup.string()
     .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?#&])[A-Za-z\d@$!%*#?&]{8,}$/,
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?#&_^])[A-Za-z\d@$!%*#?&_^]{8,}$/,
       "Password must contain at least 8 characters, one uppercase, one lowercase, one number and one special case character"
     )
     .required("Password is required"),
@@ -33,7 +35,12 @@ export const validationSchema3 = Yup.object({
   restaurantphoneNo: Yup.string()
     .matches(/^\d{10}$/, "Phone number must be exactly 10 digits")
     .required("Phone number is required"),
-  restaurantwebsite: Yup.string().url("Invalid URL").notRequired(),
+  restaurantwebsite: Yup.string()
+    .matches(
+      /^(?:www\.)?[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.[a-zA-Z]{2,6}$/,
+      "Invalid website format"
+    )
+    .notRequired(),
 });
 
 export const validationSchema4 = Yup.object({
@@ -56,6 +63,7 @@ export const validationSchema4 = Yup.object({
     .required("Number of waiters is required"),
   restaurantimage: Yup.mixed().required("Restaurant image is required"),
 });
+
 const gstinRegex = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}[Z]{1}[0-9A-Z]{1}$/;
 
 export const validationSchema5 = Yup.object().shape({
@@ -71,4 +79,3 @@ export const validationSchema5 = Yup.object().shape({
     .matches(gstinRegex, 'Invalid GSTIN format')
     .required('GSTIN is required'),
 });
-

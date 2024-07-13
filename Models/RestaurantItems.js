@@ -20,9 +20,13 @@ const restaurantItemsSchema = new mongoose.Schema(
     sgst:{
       type:String,
     },
+    nooftables:{
+      type:String,
+    },
   },
   { timestamps: true }
 );
 
 export default mongoose.models.RestaurantItems ||
   mongoose.model("RestaurantItems", restaurantItemsSchema);
+  

@@ -89,8 +89,8 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
       <div className="absolute top-0 left-0 right-0">
         <LinearDeterminate currentProgress={60} />
       </div>
-      <h2 className="text-left text-rose-800 -mb-5 tracking-widest text-sm">
-        <KeyboardBackspaceIcon onClick={() => handleBackward(page)} /> Go back
+      <h2 onClick={() => handleBackward(page)} className="text-left text-rose-800 -mb-5 tracking-widest text-sm">
+        <KeyboardBackspaceIcon  /> Go back
       </h2>
       <h2 className="text-3xl font-bold text-left text-rose-800">
         Fill Restaurant Details
@@ -100,7 +100,7 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
           <div className="flex items-center justify-between space-x-4">
             <div className="flex flex-col space-y-1">
               <label htmlFor="restaurantopeninghours" className="text-sm text-gray-400">
-                Opens at
+                Opens at&nbsp;<span className="text-red-500">*</span>
               </label>
               <input
                 type="time"
@@ -120,7 +120,7 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
             </div>
             <div className="flex flex-col space-y-1">
               <label htmlFor="restaurantclosinghours" className="text-sm text-gray-400">
-                Closes at
+                Closes at&nbsp;<span className="text-red-500">*</span>
               </label>
               <input
                 type="time"
@@ -143,7 +143,7 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
           <div className="flex border-t border-dashed pt-2 items-center justify-between space-x-4">
             <div className="flex flex-col space-y-1 w-[36%]">
               <label htmlFor="noofchef" className="text-sm text-gray-400">
-                No. of Chef
+                No. of Chef&nbsp;<span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -164,7 +164,7 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
             </div>
             <div className="flex flex-col space-y-1 w-[36%]">
               <label htmlFor="noofseatingcapacity" className="text-sm text-gray-400">
-                Seating Capacity
+                Seating Capacity&nbsp;<span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -188,7 +188,7 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
           <div className="flex border-t border-dashed pt-2 items-center justify-between space-x-4">
             <div className="flex flex-col space-y-1 w-[36%]">
               <label htmlFor="nooftables" className="text-sm text-gray-400">
-                No. of Tables
+                No. of Tables&nbsp;<span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -209,7 +209,7 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
             </div>
             <div className="flex flex-col space-y-1 w-[36%]">
               <label htmlFor="noofemployees" className="text-sm text-gray-400">
-                No. of employees
+                No. of employees&nbsp;<span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -233,7 +233,7 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
           <div className="flex border-t border-dashed pt-2 items-center justify-between space-x-4">
             <div className="flex flex-col space-y-1 w-[36%]">
               <label htmlFor="noofwaiters" className="text-sm text-gray-400">
-                No. of waiters
+                No. of waiters&nbsp;<span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -254,7 +254,7 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
             </div>
             <div className="flex flex-col space-y-1 w-[36%]">
               <label htmlFor="restaurantimage" className="text-sm text-gray-400">
-                Restaurant Image
+                Restaurant Image&nbsp;<span className="text-red-500">*</span>
               </label>
               <input
                 type="file"
