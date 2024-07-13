@@ -9,57 +9,25 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
   const fileInputRef = useRef(null);
   const [fileName, setFileName] = useState("");
 
-  const handleFileUpload = () => {
-    fileInputRef.current.click();
-  };
+  // const handleFileUpload = () => {
+  //   fileInputRef.current.click();
+  // };
 
-  const resizeImage = (file, maxWidth, maxHeight) => {
-    return new Promise((resolve) => {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const img = new Image();
-        img.onload = () => {
-          const canvas = document.createElement("canvas");
-          let width = img.width;
-          let height = img.height;
 
-          if (width > height) {
-            if (width > maxWidth) {
-              height *= maxWidth / width;
-              width = maxWidth;
-            }
-          } else {
-            if (height > maxHeight) {
-              width *= maxHeight / height;
-              height = maxHeight;
-            }
-          }
-          canvas.width = width;
-          canvas.height = height;
-          const ctx = canvas.getContext("2d");
-          ctx.drawImage(img, 0, 0, width, height);
-          resolve(canvas.toDataURL("image/jpeg", 0.7)); // Reduce quality if necessary
-        };
-        img.src = event.target.result;
-      };
-      reader.readAsDataURL(file);
-    });
-  };
-
-  const handleFileChange = async (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const resizedImage = await resizeImage(file, 800, 800); // Resize to 800x800 pixels
-      formik.setFieldValue("restaurantimage", {
-        file,
-        base64: resizedImage,
-      });
-      setFileName(file.name);
-    }
-  };
+  // const handleFileChange = async (event) => {
+  //   const file = event.target.files[0];
+  //   if (file) {
+  //     const resizedImage = await resizeImage(file, 800, 800); // Resize to 800x800 pixels
+  //     formik.setFieldValue("restaurantimage", {
+  //       file,
+  //       base64: resizedImage,
+  //     });
+  //     setFileName(file.name);
+  //   }
+  // };
 
   const handleSubmitforward = (values) => {
-    appendvalues({ ...values, restaurantimage: values.restaurantimage.base64 });
+    appendvalues({ ...values, restaurantimage: values?.restaurantimage?.base64 });
     handleForward(page);
   };
 
@@ -252,36 +220,7 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
                 </p>
               ) : null}
             </div>
-            <div className="flex flex-col space-y-1 w-[36%]">
-              <label htmlFor="restaurantimage" className="text-sm text-gray-400">
-                Restaurant Image&nbsp;<span className="text-red-500">*</span>
-              </label>
-              <input
-                type="file"
-                id="restaurantimage"
-                onChange={handleFileChange}
-                onBlur={formik.handleBlur}
-                name="restaurantimage"
-                accept="image/png, image/jpeg"
-                ref={fileInputRef}
-                className="hidden"
-              />
-              <button
-                type="button"
-                onClick={handleFileUpload}
-                className="bg-gray-300 bg-opacity-30 border border-gray-300 rounded-lg text-rose-700 font-medium px-4 py-2 focus:outline-none hover:bg-slate-200"
-              >
-                Upload Photo
-              </button>
-              {fileName && (
-                <p className="text-sm text-gray-400 mt-2">{fileName}</p>
-              )}
-              {formik.errors.restaurantimage && formik.touched.restaurantimage ? (
-                <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
-                  {formik.errors.restaurantimage}
-                </p>
-              ) : null}
-            </div>
+  
           </div>
           {/* -------------------------------------------------------------- */}
           <button
