@@ -54,11 +54,13 @@ function Page2({ appendvalues, values, page, handleForward, handleBackward }) {
               placeholder=" "
               className="w-full px-3 py-2 border-b border-gray-300 focus:outline-none"
             />
+            <div className="h-5">
             {formik.errors.username && formik.touched.username ? (
               <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
                 {formik.errors.username}
               </p>
             ) : null}
+            </div>
           </div>
 
           <div className="relative">
@@ -75,11 +77,13 @@ function Page2({ appendvalues, values, page, handleForward, handleBackward }) {
               placeholder=" "
               className="w-full px-3 py-2 border-b border-gray-300 focus:outline-none"
             />
+            <div className="h-5">
             {formik.errors.password && formik.touched.password ? (
               <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
                 {formik.errors.password}
               </p>
             ) : null}
+            </div>
           </div>
 
           <div className="relative">
@@ -96,11 +100,13 @@ function Page2({ appendvalues, values, page, handleForward, handleBackward }) {
               placeholder=" "
               className="w-full px-3 py-2 border-b border-gray-300 focus:outline-none"
             />
+            <div className="h-5">
             {formik.errors.confirmpassword && formik.touched.confirmpassword ? (
               <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
                 {formik.errors.confirmpassword}
               </p>
             ) : null}
+            </div>
           </div>
 
           <div className="flex items-center space-x-2">

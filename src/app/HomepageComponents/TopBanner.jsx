@@ -6,7 +6,7 @@ import bgimg from "../assets/topbg.png";
 import TypedText from "./TypedText";
 import { FaAngleDown } from "react-icons/fa6";
 import Link from "next/link";
-import bgimgnew from "../assets/bgimgnew.jpg"
+import bgimgnew from "../assets/bgimgnew.jpg";
 
 function TopBanner() {
   const scrollToContent = () => {
@@ -35,7 +35,8 @@ function TopBanner() {
           <TypedText />
         </div>
         <Link
-          href="/Collaboratewithus"
+          // href="/Collaboratewithus"
+          href="/Pincode"
           className="bg-[#f6ddc2] font-bold   p-4 py-2 rounded-md text-[#262217] text-xl hover:scale-105  animate-pulse duration-700"
           // href="/Signup"
           // className="bg-yellow-400/90 font-semibold p-4 py-2 rounded-md text-[#FFF9EA] text-xl hover:scale-105 duration-500"

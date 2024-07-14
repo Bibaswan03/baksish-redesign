@@ -50,11 +50,13 @@ function Page1({ appendvalues, values, page, handleForward, handleBackward }) {
               placeholder=" "
               className="w-full px-3 py-2 border-b border-gray-300 focus:outline-none"
             />
+            <div className="h-10">
             {formik.errors.name && formik.touched.name ? (
               <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
                 {formik.errors.name}
               </p>
             ) : null}
+            </div>
           </div>
 
           <div className="relative">
@@ -71,11 +73,13 @@ function Page1({ appendvalues, values, page, handleForward, handleBackward }) {
               placeholder="your_email@example.com"
               className="w-full px-3 py-2 border-b border-gray-300 focus:outline-none"
             />
+            <div className="h-10">
             {formik.errors.email && formik.touched.email ? (
               <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
                 {formik.errors.email}
               </p>
             ) : null}
+            </div>
           </div>
 
           <div className="relative">
@@ -93,11 +97,13 @@ function Page1({ appendvalues, values, page, handleForward, handleBackward }) {
               placeholder="XXXXX XXXXX"
               className="w-full px-3 py-2 border-b border-gray-300 focus:outline-none"
             />
+            <div className="h-10">
             {formik.errors.phoneNo && formik.touched.phoneNo ? (
               <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
                 {formik.errors.phoneNo}
               </p>
             ) : null}
+            </div>
           </div>
         </div>
         <button

@@ -52,11 +52,13 @@ function Page3({ appendvalues, values, page, handleForward, handleBackward }) {
               placeholder=" "
               className="w-full px-3 py-2 border-b border-gray-300 focus:outline-none"
             />
+            <div className="h-2">
             {formik.errors.restaurantname && formik.touched.restaurantname ? (
               <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
                 {formik.errors.restaurantname}
               </p>
             ) : null}
+            </div>
           </div>
 
           <div className="relative">
@@ -73,11 +75,13 @@ function Page3({ appendvalues, values, page, handleForward, handleBackward }) {
               placeholder="your_email@example.com"
               className="w-full px-3 py-2 border-b border-gray-300 focus:outline-none"
             />
+            <div className="h-2">
             {formik.errors.restaurantemail && formik.touched.restaurantemail ? (
               <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
                 {formik.errors.restaurantemail}
               </p>
             ) : null}
+            </div>
           </div>
 
           <div className="relative">
@@ -95,11 +99,13 @@ function Page3({ appendvalues, values, page, handleForward, handleBackward }) {
               placeholder=" "
               className="w-full px-3 py-2 border-b border-gray-300 focus:outline-none"
             />
+            <div className="h-2">
             {formik.errors.restaurantphoneNo && formik.touched.restaurantphoneNo ? (
               <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
                 {formik.errors.restaurantphoneNo}
               </p>
             ) : null}
+            </div>
           </div>
 
           <div className="relative">
@@ -116,11 +122,13 @@ function Page3({ appendvalues, values, page, handleForward, handleBackward }) {
               placeholder=" "
               className="w-full px-3 py-2 border-b border-gray-300 focus:outline-none"
             />
+            <div className="h-2">
             {formik.errors.restaurantwebsite && formik.touched.restaurantwebsite ? (
               <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
                 {formik.errors.restaurantwebsite}
               </p>
             ) : null}
+            </div>
             <p className="text-xs text-gray-500 mt-1">
               # Provide your restaurant's website URL for better visibility.
             </p>

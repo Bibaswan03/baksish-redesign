@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { v4 as uuidv4 } from 'uuid'; // Importing uuid
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import LinearDeterminate from "./ProgressBar";
 import { validationSchema5 } from "./Utils/ValidationSchema";
@@ -15,6 +16,7 @@ function Page5({
   handleForward,
 }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [locationDetails, setLocationDetails] = useState(null);
 
   const handleSubmitforward = async (formValues) => {
     const combinedValues = { ...values, ...formValues };
@@ -22,21 +24,19 @@ function Page5({
 
     try {
       setIsSubmitting(true);
-      toast.loading('Submitting...', { id: 'submitToast' });
+      toast.loading('Submitting...', { id: uuidv4() }); // Generating a unique ID using uuid
       let { data } = await axios.post('/api/signup', combinedValues);
       console.log(data);
-      toast.dismiss('submitToast');
+      toast.dismiss();
       if (data.success) {
         toast.success('Successfully Signed in');
         window.location = 'https://admin.baksish.in';
       } else {
         toast.error('Failed to Sign in');
-        // Prevent page reload and form reset on error
-        // window.location.reload();
       }
     } catch (error) {
       console.error("Error sending data to the backend:", error);
-      toast.dismiss('submitToast');
+      toast.dismiss();
       toast.error('An error occurred while submitting.');
     } finally {
       setIsSubmitting(false);
@@ -46,6 +46,7 @@ function Page5({
   const initialValues = {
     restaurantaddress: values.restaurantaddress || "",
     restaurantdescription: values.restaurantdescription || "",
+    pincode: values.pincode || "",
     sgst: values.sgst || "",
     cgst: values.cgst || "",
     gstin: values.gstin || ""
@@ -73,6 +74,22 @@ function Page5({
           value: e.target.value,
         },
       });
+    }
+    if (e.target.name === 'pincode' && e.target.value.length === 6) {
+      fetchLocationDetails(e.target.value);
+    }
+  };
+
+  const fetchLocationDetails = async (pincode) => {
+    try {
+      const response = await axios.get(`/api/pincode?pincode=${pincode}`);
+      if (response.data.success) {
+        setLocationDetails(response.data);
+      } else {
+        setLocationDetails(null);
+      }
+    } catch (error) {
+      setLocationDetails(null);
     }
   };
 
@@ -130,6 +147,33 @@ function Page5({
               </label>
             </div>
           </div>
+
+          <input
+            type="text"
+            id="pincode"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={formValues.pincode}
+            name="pincode"
+            placeholder="Enter pincode*"
+            className="w-full px-3 py-2 border-b border-gray-300 focus:outline-none"
+            disabled={isSubmitting}
+          />
+          {errors.pincode && touched.pincode ? (
+            <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
+              {errors.pincode}
+            </p>
+          ) : null}
+
+          {locationDetails && (
+            <div className="mt-4">
+              <h3 className="text-lg font-bold">Location Details:</h3>
+              <p>State: {locationDetails.state}</p>
+              <p>District: {locationDetails.district}</p>
+              <p>Area: {locationDetails.area}</p>
+              <p>Pincode: {locationDetails.pincode}</p>
+            </div>
+          )}
 
           <select
             id="sgst"

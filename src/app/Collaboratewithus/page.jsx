@@ -13,11 +13,15 @@ import Header from "../Components/Header";
 
 // Form validation schema using Yup
 const validationSchema = Yup.object().shape({
-  restaurantName: Yup.string().required("Restaurant name is required"),
+  restaurantName:  Yup.string()
+  .matches(/^[A-Za-z]+$/, "Restaurant name must contain only alphabets")
+  .required("Restaurant name is required"),
   email: Yup.string()
     .email("Invalid email format")
     .required("Email is required"),
-  phone: Yup.string().required("Phone is required"),
+    phone: Yup.string()
+    .required("Phone is required")
+    .matches(/^\d{10}$/, "Phone number must be exactly 10 digits"),
   address: Yup.string().required("Address is required"),
 });
 

@@ -80,11 +80,13 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
                 placeholder=" "
                 className="text-rose-700 font-semibold px-3 py-2 border border-gray-300 rounded-lg focus:outline-none"
               />
+              <div className="h-5">
               {formik.errors.restaurantopeninghours && formik.touched.restaurantopeninghours ? (
                 <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
                   {formik.errors.restaurantopeninghours}
                 </p>
               ) : null}
+              </div>
             </div>
             <div className="flex flex-col space-y-1">
               <label htmlFor="restaurantclosinghours" className="text-sm text-gray-400">
@@ -100,11 +102,13 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
                 placeholder=" "
                 className="text-rose-700 font-semibold px-3 py-2 border border-gray-300 rounded-lg focus:outline-none"
               />
+              <div className="h-5">
               {formik.errors.restaurantclosinghours && formik.touched.restaurantclosinghours ? (
                 <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
                   {formik.errors.restaurantclosinghours}
                 </p>
               ) : null}
+              </div>
             </div>
           </div>
           {/* -------------------------------------------------------------- */}
@@ -124,11 +128,13 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
                 placeholder=" "
                 className="text-rose-900 font-semibold px-3 py-2 border border-gray-300 rounded-lg focus:outline-none"
               />
+              <div className="h-5">
               {formik.errors.noofchef && formik.touched.noofchef ? (
                 <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
                   {formik.errors.noofchef}
                 </p>
               ) : null}
+              </div>
             </div>
             <div className="flex flex-col space-y-1 w-[36%]">
               <label htmlFor="noofseatingcapacity" className="text-sm text-gray-400">
@@ -145,11 +151,13 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
                 placeholder=" "
                 className="text-rose-900 font-semibold px-3 py-2 border border-gray-300 rounded-lg focus:outline-none"
               />
+              <div className="h-5">
               {formik.errors.noofseatingcapacity && formik.touched.noofseatingcapacity ? (
                 <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
                   {formik.errors.noofseatingcapacity}
                 </p>
               ) : null}
+              </div>
             </div>
           </div>
           {/* -------------------------------------------------------------- */}
@@ -169,11 +177,13 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
                 placeholder=" "
                 className="text-rose-900 font-semibold px-3 py-2 border border-gray-300 rounded-lg focus:outline-none"
               />
+              <div className="h-5">
               {formik.errors.nooftables && formik.touched.nooftables ? (
                 <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
                   {formik.errors.nooftables}
                 </p>
               ) : null}
+              </div>
             </div>
             <div className="flex flex-col space-y-1 w-[36%]">
               <label htmlFor="noofemployees" className="text-sm text-gray-400">
@@ -190,11 +200,13 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
                 placeholder=" "
                 className="text-rose-900 font-semibold px-3 py-2 border border-gray-300 rounded-lg focus:outline-none"
               />
+              <div className="h-5">
               {formik.errors.noofemployees && formik.touched.noofemployees ? (
                 <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
                   {formik.errors.noofemployees}
                 </p>
               ) : null}
+              </div>
             </div>
           </div>
           {/* -------------------------------------------------------------- */}
@@ -214,11 +226,13 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
                 placeholder=" "
                 className="text-rose-900 font-semibold px-3 py-2 border border-gray-300 rounded-lg focus:outline-none"
               />
+              <div className="h-5">
               {formik.errors.noofwaiters && formik.touched.noofwaiters ? (
                 <p className="form-error p-[2px] text-[0.65rem] text-rose-500">
                   {formik.errors.noofwaiters}
                 </p>
               ) : null}
+              </div>
             </div>
   
           </div>

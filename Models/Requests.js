@@ -19,6 +19,11 @@ const requestSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    status: {
+      type: String,
+      enum: ["pending", "verified", "cancelled","accepted"],
+      default: "pending",
+    },
   },
   { timestamps: true }
 );
