@@ -31,7 +31,8 @@ function Page5({
         window.location = 'https://admin.baksish.in';
       } else {
         toast.error('Failed to Sign in');
-        window.location.reload();
+        // Prevent page reload and form reset on error
+        // window.location.reload();
       }
     } catch (error) {
       console.error("Error sending data to the backend:", error);
@@ -60,10 +61,7 @@ function Page5({
   } = useFormik({
     initialValues,
     validationSchema: validationSchema5,
-    onSubmit: (formValues, action) => {
-      handleSubmitforward(formValues);
-      action.resetForm();
-    },
+    onSubmit: handleSubmitforward,
   });
 
   const handleChange = (e) => {
@@ -84,7 +82,7 @@ function Page5({
         <LinearDeterminate currentProgress={100} />
         <Toaster />
       </div>
-      <h2 onClick={() => handleBackward(page)}  className="text-left text-rose-800 -mb-5 tracking-widest text-sm">
+      <h2 onClick={() => handleBackward(page)} className="text-left text-rose-800 -mb-5 tracking-widest text-sm">
         <KeyboardBackspaceIcon />{" "}
         Go back
       </h2>
@@ -161,6 +159,7 @@ function Page5({
             name="cgst"
             className="w-full px-3 py-2 text-sm border-b border-gray-300 text-zinc-500 focus:outline-none"
             disabled={isSubmitting}
+            readOnly
           >
             <option value="">Select CGST %</option>
             <option value="2.5">2.5%</option>

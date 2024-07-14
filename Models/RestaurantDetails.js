@@ -41,7 +41,6 @@ export const restaurantdetailsSchema = new mongoose.Schema(
     },
     restaurantimage: {
       type: String,
-      required: true,
     },
     noofchef: {
       type: String,

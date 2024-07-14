@@ -199,7 +199,7 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
           </div>
           {/* -------------------------------------------------------------- */}
           <div className="flex border-t border-dashed pt-2 items-center justify-between space-x-4">
-            <div className="flex flex-col space-y-1 w-[36%]">
+            <div className="flex flex-col space-y-1 w-full">
               <label htmlFor="noofwaiters" className="text-sm text-gray-400">
                 No. of waiters&nbsp;<span className="text-red-500">*</span>
               </label>

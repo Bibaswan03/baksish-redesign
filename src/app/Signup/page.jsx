@@ -15,7 +15,7 @@ const page = () => {
 
   const [values, setValues] = useState({
     restaurantname: "",
-    restaurantid: "RES_"+uuidv4(),
+    restaurantid: "",
     restaurantlocation: "",
     restaurantphoneNo: "",
     restaurantemail: "",

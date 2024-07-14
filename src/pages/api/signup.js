@@ -4,6 +4,7 @@ import Restaurant_credentials from "../../../Models/Restaurant_credentials";
 import bcrypt from "bcrypt";
 import nodemailer from "nodemailer";
 import RestaurantItems from "../../../Models/RestaurantItems";
+import { uuid } from "uuidv4";
 
 // Configure Nodemailer
 const transporter = nodemailer.createTransport({
@@ -27,7 +28,7 @@ const sendEmail = (to, subject, text) => {
 
 const handler = async (req, res) => {
   if (req.method === "POST") {
-    //console.log(req.body);
+    const resid = "RES_" + uuid(); //console.log(req.body);
     try {
       const {
         restaurantname,
@@ -58,7 +59,7 @@ const handler = async (req, res) => {
 
       const newRestaurant = new RestaurantDetails({
         restaurantname,
-        restaurantid,
+        restaurantid: resid,
         restaurantlocation,
         restaurantphoneNo,
         restaurantemail,
@@ -81,7 +82,7 @@ const handler = async (req, res) => {
       const u = await newRestaurant.save();
 
       const resitems = new RestaurantItems({
-        restaurant_id: restaurantid,
+        restaurant_id: resid,
         restaurant_name: restaurantname,
         sgst: sgst,
         cgst: cgst,
@@ -97,7 +98,7 @@ const handler = async (req, res) => {
           email,
           name,
           phoneNo,
-          restaurantid,
+          restaurantid:resid,
         });
 
         const x = await newCred.save();
