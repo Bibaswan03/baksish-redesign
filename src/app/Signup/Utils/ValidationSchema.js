@@ -3,17 +3,17 @@
 import * as Yup from "yup";
 
 export const validationSchema1 = Yup.object({
-  name: Yup.string().required("Full restaurantname is required"),
+  name: Yup.string().required("Full name is required"),
   email: Yup.string()
-    .email("Invalid restaurantemail address")
-    .required("restaurantemail is required"),
+    .email("Invalid email address")
+    .required("Email is required"),
   phoneNo: Yup.string()
     .matches(/^\d{10}$/, "Phone number must be exactly 10 digits")
     .required("Phone number is required"),
 });
 
 export const validationSchema2 = Yup.object({
-  username: Yup.string().required("Full restaurantname is required"),
+  username: Yup.string().required("Username is required"),
   password: Yup.string()
     .matches(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?#&_^])[A-Za-z\d@$!%*#?&_^]{8,}$/,
@@ -27,18 +27,18 @@ export const validationSchema2 = Yup.object({
 
 export const validationSchema3 = Yup.object({
   restaurantname: Yup.string().required(
-    "Restaurant restaurantname is required"
+    "Restaurant name is required"
   ),
   restaurantemail: Yup.string()
     .email("Invalid restaurantemail address")
-    .required("restaurantemail is required"),
+    .required("Restaurant email is required"),
   restaurantphoneNo: Yup.string()
     .matches(/^\d{10}$/, "Phone number must be exactly 10 digits")
-    .required("Phone number is required"),
+    .required("Restaurant Phone number is required"),
   restaurantwebsite: Yup.string()
     .matches(
       /^(?:www\.)?[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.[a-zA-Z]{2,6}$/,
-      "Invalid website format"
+      "Invalid website url"
     )
     .notRequired(),
 });

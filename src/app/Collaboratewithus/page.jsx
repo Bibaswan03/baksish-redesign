@@ -13,13 +13,14 @@ import Header from "../Components/Header";
 
 // Form validation schema using Yup
 const validationSchema = Yup.object().shape({
-  restaurantName:  Yup.string()
-  .matches(/^[A-Za-z]+$/, "Restaurant name must contain only alphabets")
-  .required("Restaurant name is required"),
+  name: Yup.string().required("name is required"),
+  restaurantName: Yup.string()
+    .matches(/^[A-Za-z]+$/, "Restaurant name must contain only alphabets")
+    .required("Restaurant name is required"),
   email: Yup.string()
     .email("Invalid email format")
     .required("Email is required"),
-    phone: Yup.string()
+  phone: Yup.string()
     .required("Phone is required")
     .matches(/^\d{10}$/, "Phone number must be exactly 10 digits"),
   address: Yup.string().required("Address is required"),
@@ -59,8 +60,7 @@ function Page() {
   return (
     <div>
       <Toaster />
-      <Header/>
-      
+      <Header />
 
       <section className="mt-4 ">
         <div className="max-w-[1200px] mx-auto p-6 md:flex md:items-center md:justify-between">
@@ -89,6 +89,7 @@ function Page() {
             <Formik
               initialValues={{
                 restaurantName: "",
+                name: "",
                 email: "",
                 phone: "",
                 address: "",
@@ -110,6 +111,22 @@ function Page() {
                     />
                     <ErrorMessage
                       name="restaurantName"
+                      component="div"
+                      className="text-red-500 text-sm"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label className="block text-[#3B3131]">
+                      Name<sup className="text-rose-500">*</sup>
+                    </label>
+                    <Field
+                      type="text"
+                      name="Name"
+                      placeholder="Your name"
+                      className="w-full p-2 border border-gray-300 rounded-md"
+                    />
+                    <ErrorMessage
+                      name="Name"
                       component="div"
                       className="text-red-500 text-sm"
                     />

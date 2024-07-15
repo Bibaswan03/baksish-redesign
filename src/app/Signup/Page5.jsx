@@ -185,6 +185,7 @@ function Page5({
             disabled={isSubmitting}
           >
             <option value="">Select SGST %</option>
+            <option value="0.0">0.0%</option>
             <option value="2.5">2.5%</option>
             <option value="6.5">6.5%</option>
             <option value="9">9%</option>
@@ -206,6 +207,7 @@ function Page5({
             readOnly
           >
             <option value="">Select CGST %</option>
+            <option value="0.0">0.0%</option>
             <option value="2.5">2.5%</option>
             <option value="6.5">6.5%</option>
             <option value="9">9%</option>

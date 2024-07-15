@@ -39,7 +39,7 @@ function Page3({ appendvalues, values, page, handleForward, handleBackward }) {
       <form onSubmit={formik.handleSubmit}>
         <div className="flex flex-col space-y-4">
           <div className="relative">
-            <label htmlFor="restaurantname" className="text-sm text-gray-400">
+            <label htmlFor="restaurantname" className="text-sm text-gray-700">
               Restaurant Name&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
@@ -62,7 +62,7 @@ function Page3({ appendvalues, values, page, handleForward, handleBackward }) {
           </div>
 
           <div className="relative">
-            <label htmlFor="restaurantemail" className="text-sm text-gray-400">
+            <label htmlFor="restaurantemail" className="text-sm text-gray-700">
               Restaurant Email&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
@@ -85,7 +85,7 @@ function Page3({ appendvalues, values, page, handleForward, handleBackward }) {
           </div>
 
           <div className="relative">
-            <label htmlFor="restaurantphoneNo" className="text-sm text-gray-400">
+            <label htmlFor="restaurantphoneNo" className="text-sm text-gray-700">
               Restaurant Phone Number&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
@@ -109,7 +109,7 @@ function Page3({ appendvalues, values, page, handleForward, handleBackward }) {
           </div>
 
           <div className="relative">
-            <label htmlFor="restaurantwebsite" className="text-sm text-gray-400">
+            <label htmlFor="restaurantwebsite" className="text-sm text-gray-700">
               Restaurant Website
             </label>
             <input
@@ -136,7 +136,7 @@ function Page3({ appendvalues, values, page, handleForward, handleBackward }) {
         </div>
         <button
           type="submit"
-          className="w-full px-4 mt-14 py-2 text-white bg-[#6C0345] rounded-md hover:bg-rose-900"
+          className="w-full px-4 mt-8 py-2 text-white bg-[#6C0345] rounded-md hover:bg-rose-900"
         >
           Next
         </button>

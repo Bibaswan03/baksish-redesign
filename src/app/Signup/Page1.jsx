@@ -26,19 +26,19 @@ function Page1({ appendvalues, values, page, handleForward, handleBackward }) {
   });
 
   return (
-    <div className="w-full max-w-md p-8 space-y-6 relative h-[650px] bg-white rounded-lg shadow-md">
+    <div className="w-full max-w-md  p-4 space-y-6 relative h-[650px] bg-white rounded-lg shadow-md">
       <div className="absolute top-0 left-0 right-0">
         <LinearDeterminate currentProgress={0} />
       </div>
 
-      <h2 className="text-3xl font-bold text-center text-rose-800 -mb-5">Create Account</h2>
+      <h2 className="text-3xl font-bold text-center text-rose-800 ">Create Account</h2>
 
       <h3 className="text-center text-rose-800">To subscribe Baksish</h3>
       <form onSubmit={formik.handleSubmit}>
-        <div className="flex flex-col space-y-6">
+        <div className="flex flex-col ">
           <div className="relative">
-            <label htmlFor="name" className="text-sm text-gray-400">
-              Full Name&nbsp;<span className="text-red-500">*</span>
+            <label htmlFor="name" className="text-sm text-gray-700">
+              Admin Name&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
               onChange={formik.handleChange}
@@ -60,8 +60,8 @@ function Page1({ appendvalues, values, page, handleForward, handleBackward }) {
           </div>
 
           <div className="relative">
-            <label htmlFor="email" className="text-sm text-gray-400">
-              User's Email&nbsp;<span className="text-red-500">*</span>
+            <label htmlFor="email" className="text-sm text-gray-700">
+              Admin Email&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
               onChange={formik.handleChange}
@@ -83,8 +83,8 @@ function Page1({ appendvalues, values, page, handleForward, handleBackward }) {
           </div>
 
           <div className="relative">
-            <label htmlFor="phoneNo" className="text-sm text-gray-400">
-              Phone Number&nbsp;<span className="text-red-500">*</span>
+            <label htmlFor="phoneNo" className="text-sm text-gray-700">
+            Admin Phone Number&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
               onChange={formik.handleChange}

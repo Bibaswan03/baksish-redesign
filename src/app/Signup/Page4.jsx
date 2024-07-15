@@ -54,10 +54,10 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
 
   return (
     <div className="w-full max-w-md p-8 space-y-6 relative overflow-y-auto lg:h-[650px] h-[750px] bg-white rounded-lg shadow-md">
-      <div className="absolute top-0 left-0 right-0">
+      <div className="absolute top-0  left-0 right-0">
         <LinearDeterminate currentProgress={60} />
       </div>
-      <h2 onClick={() => handleBackward(page)} className="text-left text-rose-800 -mb-5 tracking-widest text-sm">
+      <h2 onClick={() => handleBackward(page)} className="text-left cursor-pointer text-rose-800 -mb-5 tracking-widest text-sm">
         <KeyboardBackspaceIcon  /> Go back
       </h2>
       <h2 className="text-3xl font-bold text-left text-rose-800">
@@ -67,7 +67,7 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
         <div className="flex flex-col space-y-4">
           <div className="flex items-center justify-between space-x-4">
             <div className="flex flex-col space-y-1">
-              <label htmlFor="restaurantopeninghours" className="text-sm text-gray-400">
+              <label htmlFor="restaurantopeninghours" className="text-sm text-gray-700">
                 Opens at&nbsp;<span className="text-red-500">*</span>
               </label>
               <input
@@ -89,7 +89,7 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
               </div>
             </div>
             <div className="flex flex-col space-y-1">
-              <label htmlFor="restaurantclosinghours" className="text-sm text-gray-400">
+              <label htmlFor="restaurantclosinghours" className="text-sm text-gray-700">
                 Closes at&nbsp;<span className="text-red-500">*</span>
               </label>
               <input
@@ -114,7 +114,7 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
           {/* -------------------------------------------------------------- */}
           <div className="flex border-t border-dashed pt-2 items-center justify-between space-x-4">
             <div className="flex flex-col space-y-1 w-[36%]">
-              <label htmlFor="noofchef" className="text-sm text-gray-400">
+              <label htmlFor="noofchef" className="text-sm text-gray-700">
                 No. of Chef&nbsp;<span className="text-red-500">*</span>
               </label>
               <input
@@ -137,7 +137,7 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
               </div>
             </div>
             <div className="flex flex-col space-y-1 w-[36%]">
-              <label htmlFor="noofseatingcapacity" className="text-sm text-gray-400">
+              <label htmlFor="noofseatingcapacity" className="text-sm text-gray-700">
                 Seating Capacity&nbsp;<span className="text-red-500">*</span>
               </label>
               <input
@@ -163,7 +163,7 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
           {/* -------------------------------------------------------------- */}
           <div className="flex border-t border-dashed pt-2 items-center justify-between space-x-4">
             <div className="flex flex-col space-y-1 w-[36%]">
-              <label htmlFor="nooftables" className="text-sm text-gray-400">
+              <label htmlFor="nooftables" className="text-sm text-gray-700">
                 No. of Tables&nbsp;<span className="text-red-500">*</span>
               </label>
               <input
@@ -186,7 +186,7 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
               </div>
             </div>
             <div className="flex flex-col space-y-1 w-[36%]">
-              <label htmlFor="noofemployees" className="text-sm text-gray-400">
+              <label htmlFor="noofemployees" className="text-sm text-gray-700">
                 No. of employees&nbsp;<span className="text-red-500">*</span>
               </label>
               <input
@@ -212,7 +212,7 @@ function Page4({ values, appendvalues, page, handleForward, handleBackward }) {
           {/* -------------------------------------------------------------- */}
           <div className="flex border-t border-dashed pt-2 items-center justify-between space-x-4">
             <div className="flex flex-col space-y-1 w-full">
-              <label htmlFor="noofwaiters" className="text-sm text-gray-400">
+              <label htmlFor="noofwaiters" className="text-sm text-gray-700">
                 No. of waiters&nbsp;<span className="text-red-500">*</span>
               </label>
               <input

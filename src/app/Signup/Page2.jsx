@@ -41,8 +41,8 @@ function Page2({ appendvalues, values, page, handleForward, handleBackward }) {
       <form onSubmit={formik.handleSubmit}>
         <div className="flex flex-col space-y-4">
           <div className="relative">
-            <label htmlFor="username" className="text-sm text-gray-400">
-              Username&nbsp;<span className="text-red-500">*</span>
+            <label htmlFor="username" className="text-sm text-gray-700">
+              Admin Username&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -64,8 +64,8 @@ function Page2({ appendvalues, values, page, handleForward, handleBackward }) {
           </div>
 
           <div className="relative">
-            <label htmlFor="password" className="text-sm text-gray-400">
-              Password&nbsp;<span className="text-red-500">*</span>
+            <label htmlFor="password" className="text-sm text-gray-700">
+            Password&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
               type={showPassword ? "text" : "password"}
@@ -87,7 +87,7 @@ function Page2({ appendvalues, values, page, handleForward, handleBackward }) {
           </div>
 
           <div className="relative">
-            <label htmlFor="confirmpassword" className="text-sm text-gray-400">
+            <label htmlFor="confirmpassword" className="text-sm text-gray-700">
               Confirm Password&nbsp;<span className="text-red-500">*</span>
             </label>
             <input
@@ -117,7 +117,7 @@ function Page2({ appendvalues, values, page, handleForward, handleBackward }) {
               onChange={() => setShowPassword(!showPassword)}
               className="form-checkbox text-[#6C0345] focus:ring-[#6C0345] ring-[1px] ring-gray-300"
             />
-            <label htmlFor="showPassword" className="text-sm text-gray-400 cursor-pointer">
+            <label htmlFor="showPassword" className="text-sm text-gray-700 cursor-pointer">
               Show password
             </label>
           </div>

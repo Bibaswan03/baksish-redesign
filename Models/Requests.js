@@ -6,6 +6,10 @@ const requestSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    name: {
+      type: String,
+      required: true,
+    },
     email: {
       type: String,
       required: true,
@@ -21,7 +25,7 @@ const requestSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["pending", "verified", "cancelled","accepted"],
+      enum: ["pending", "verified", "cancelled", "accepted"],
       default: "pending",
     },
   },

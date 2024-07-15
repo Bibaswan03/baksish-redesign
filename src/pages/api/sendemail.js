@@ -11,11 +11,12 @@ const handler = async (req, res) => {
     },
   });
 
-  const { restaurantName, email, phone, address } = req.body;
+  const { restaurantName, email, phone, address, name } = req.body;
 
   try {
     const newRequest = new Request({
       resturant_name: restaurantName,
+      name,
       email,
       phone,
       address,
@@ -27,21 +28,29 @@ const handler = async (req, res) => {
       setImmediate(async () => {
         try {
           await transporter.sendMail({
-            from: "Baksish", // sender address
+            from: '"Baksish" <no-reply@baksish.com>', // sender address
             to: email, // list of receivers
             subject: "Request Received",
-            text: `Dear ${restaurantName},
-
-We have received your request and will review it shortly.
-
-Details:
-Restaurant Name: ${restaurantName}
-Email: ${email}
-Phone: ${phone}
-Address: ${address}
-
-Thank you,
-Baksish`,
+            html: `
+              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 10px;">
+                <h2 style="color: #661268; text-align: center;">Request Received</h2>
+                <p style="font-size: 16px;">Dear <strong>${restaurantName}</strong>,</p>
+                <p style="font-size: 16px;">
+                  We have received your request and will review it shortly.
+                </p>
+                <h3 style="color: #661268;">Details:</h3>
+                <ul style="font-size: 16px; list-style: none; padding: 0;">
+                  <li><strong>Restaurant Name:</strong> ${restaurantName}</li>
+                  <li><strong>Email:</strong> ${email}</li>
+                  <li><strong>Phone:</strong> ${phone}</li>
+                  <li><strong>Address:</strong> ${address}</li>
+                </ul>
+                <p style="font-size: 16px;">
+                  Thank you,
+                </p>
+                <p style="font-size: 16px; font-weight: bold; color: #661268;">Baksish</p>
+              </div>
+            `,
           });
         } catch (err) {
           console.error("Error sending email:", err);
