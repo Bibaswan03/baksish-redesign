@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 
 const handler = async (req, res) => {
   try {
-    console.log(req.body);
+    //console.log(req.body);
     const { from_name, from_email, message } = req.body;
 
     const transporter = nodemailer.createTransport({
@@ -83,7 +83,7 @@ const handler = async (req, res) => {
     res.status(200).json({ success: true });
   } catch (e) {
     res.status(201).json({ success: false });
-    console.log(e);
+    //console.log(e);
   }
 };
 export default handler;

@@ -26,7 +26,7 @@ function Page1({ appendvalues, values, page, handleForward, handleBackward }) {
   });
 
   return (
-    <div className="w-full max-w-md  p-4 space-y-6 relative h-[650px] bg-white rounded-lg shadow-md">
+    <div className="w-full max-w-md mx-2 p-4 space-y-6 relative h-[650px] bg-white rounded-lg shadow-md">
       <div className="absolute top-0 left-0 right-0">
         <LinearDeterminate currentProgress={0} />
       </div>

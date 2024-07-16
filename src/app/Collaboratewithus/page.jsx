@@ -10,13 +10,16 @@ import * as Yup from "yup";
 import { ClipLoader } from "react-spinners";
 import axios from "axios";
 import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 // Form validation schema using Yup
 const validationSchema = Yup.object().shape({
   name: Yup.string().required("name is required"),
   restaurantName: Yup.string()
-    .matches(/^[A-Za-z]+$/, "Restaurant name must contain only alphabets")
     .required("Restaurant name is required"),
+  name: Yup.string()
+    .matches(/^[A-Za-z]+$/, "Name must contain only alphabets.")
+    .required("Name is required"),
   email: Yup.string()
     .email("Invalid email format")
     .required("Email is required"),
@@ -37,14 +40,18 @@ function Page() {
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     setIsLoading(true);
     try {
-      const { data } = await axios.post(`/api/sendemail`, values);
-      //console.log(data);
-      if (data?.success) {
+      const res= await axios.post(`/api/sendemail`, values);
+      if (res.data.success) {
         setIsLoading(false);
         setSubmitting(false);
         toast.success("Your Request is successfully sent and will be reviewed");
         //resetForm();
-      } else {
+      } else if(res.status==203){
+        setIsLoading(false);
+        setSubmitting(false);
+        toast.error("A request has already been sent and is in process for this email address");
+      }
+      else{
         setIsLoading(false);
         setSubmitting(false);
         toast.error("An error occurred");
@@ -62,7 +69,7 @@ function Page() {
       <Toaster />
       <Header />
 
-      <section className="mt-4 ">
+      <section className="-mt-4 mb-6">
         <div className="max-w-[1200px] mx-auto p-6 md:flex md:items-center md:justify-between">
           <div className="md:w-1/2">
             <h1 className="text-4xl text-[#661268] font-bold mb-4">
@@ -99,7 +106,7 @@ function Page() {
             >
               {({ isSubmitting }) => (
                 <Form>
-                  <div className="mb-4">
+                  <div className="mb-6 relative">
                     <label className="block text-[#3B3131]">
                       Restaurant name<sup className="text-rose-500">*</sup>
                     </label>
@@ -112,26 +119,26 @@ function Page() {
                     <ErrorMessage
                       name="restaurantName"
                       component="div"
-                      className="text-red-500 text-sm"
+                      className="text-red-500 absolute text-sm"
                     />
                   </div>
-                  <div className="mb-4">
+                  <div className="mb-6 relative">
                     <label className="block text-[#3B3131]">
                       Name<sup className="text-rose-500">*</sup>
                     </label>
                     <Field
                       type="text"
-                      name="Name"
+                      name="name"
                       placeholder="Your name"
                       className="w-full p-2 border border-gray-300 rounded-md"
                     />
                     <ErrorMessage
-                      name="Name"
+                      name="name"
                       component="div"
-                      className="text-red-500 text-sm"
+                      className="text-red-500 absolute text-sm"
                     />
                   </div>
-                  <div className="mb-4">
+                  <div className="mb-6 relative">
                     <label className="block text-[#3B3131]">
                       Email<sup className="text-rose-500">*</sup>
                     </label>
@@ -144,10 +151,10 @@ function Page() {
                     <ErrorMessage
                       name="email"
                       component="div"
-                      className="text-red-500 text-sm"
+                      className="text-red-500 absolute text-sm"
                     />
                   </div>
-                  <div className="mb-4">
+                  <div className="mb-6 relative">
                     <label className="block text-[#3B3131]">
                       Phone<sup className="text-rose-500">*</sup>
                     </label>
@@ -160,10 +167,10 @@ function Page() {
                     <ErrorMessage
                       name="phone"
                       component="div"
-                      className="text-red-500 text-sm"
+                      className="text-red-500 absolute text-sm"
                     />
                   </div>
-                  <div className="mb-4">
+                  <div className="mb-6 relative">
                     <label className="block text-[#3B3131]">
                       Address<sup className="text-rose-500">*</sup>
                     </label>
@@ -176,7 +183,7 @@ function Page() {
                     <ErrorMessage
                       name="address"
                       component="div"
-                      className="text-red-500 text-sm"
+                      className="text-red-500 absolute text-sm"
                     />
                   </div>
                   <button
@@ -204,6 +211,7 @@ function Page() {
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 }

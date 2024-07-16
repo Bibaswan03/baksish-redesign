@@ -84,7 +84,6 @@ function Page() {
       try {
         let { data } = await axios.post("/api/sendcontactemail", templateParams);
         const response = data;
-        console.log(response);
         if (response.success) {
           toast.success("Message sent. You will receive a reply soon.");
         } else {

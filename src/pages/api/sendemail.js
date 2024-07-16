@@ -1,5 +1,5 @@
-import conndb from "../../../Middlewire/Conndb";
-import Request from "../../../Models/Requests";
+import conndb from "../../../middleware/conndb";
+import Request from "../../../models/Requests";
 import nodemailer from "nodemailer";
 
 const handler = async (req, res) => {
@@ -12,8 +12,11 @@ const handler = async (req, res) => {
   });
 
   const { restaurantName, email, phone, address, name } = req.body;
-
+  
   try {
+    const existing=await Request.findOne({email: email,status:"pending" || "verified" || "accepted"});
+    // console.log(existing)
+    if(existing==null){
     const newRequest = new Request({
       resturant_name: restaurantName,
       name,
@@ -21,9 +24,9 @@ const handler = async (req, res) => {
       phone,
       address,
     });
-
+    //console.log(newRequest)
     const resdata = await newRequest.save();
-
+    console.log(resdata)
     if (resdata) {
       setImmediate(async () => {
         try {
@@ -59,10 +62,14 @@ const handler = async (req, res) => {
 
       res.status(200).json({ success: true, data: resdata });
     } else {
-      res.status(400).json({ success: false, data: null });
+      res.status(201).json({ success: false, data: null });
     }
+  }
+  else{
+    res.status(203).json({ success: false, data: null });
+  }
   } catch (err) {
-    res.status(400).json({ success: false, data: null });
+    res.status(201).json({ success: false, data: null });
   }
 };
 

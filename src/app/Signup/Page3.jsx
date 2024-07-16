@@ -28,12 +28,14 @@ function Page3({ appendvalues, values, page, handleForward, handleBackward }) {
   });
 
   return (
-    <div className="w-full max-w-md p-8 space-y-6 relative h-[700px] lg:h-[650px] bg-white rounded-lg shadow-md">
+    <div className="w-full max-w-md p-8 space-y-6 mx-2 relative h-[700px] lg:h-[650px] bg-white rounded-lg shadow-md">
       <div className="absolute top-0 left-0 right-0">
         <LinearDeterminate currentProgress={40} />
       </div>
-      <h2 onClick={() => handleBackward(page)} className="text-left text-rose-800 -mb-5">
-        <KeyboardBackspaceIcon/> Go back
+      <h2
+        className="text-left text-rose-800 -mb-5 tracking-widest text-sm"
+      >
+        <span onClick={() => handleBackward(page)} className="cursor-pointer "><KeyboardBackspaceIcon /> Go back</span>
       </h2>
       <h2 className="text-3xl font-bold text-left text-rose-800">Fill Restaurant Details</h2>
       <form onSubmit={formik.handleSubmit}>

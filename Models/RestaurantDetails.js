@@ -66,6 +66,18 @@ export const restaurantdetailsSchema = new mongoose.Schema(
     gstin:{
       type: String,
     },
+    restaurantarea:{
+      type: String,
+    },
+    restaurantdistrict:{
+      type: String,
+    },
+    restaurantstate:{
+      type: String,
+    },
+    restaurantpincode:{
+      type: String,
+    },
     verified:{
       type: Boolean,
       default: false,

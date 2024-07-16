@@ -23,6 +23,9 @@ const restaurantItemsSchema = new mongoose.Schema(
     nooftables:{
       type:String,
     },
+    phone:{
+      type:String,
+    },
   },
   { timestamps: true }
 );

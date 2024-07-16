@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../assets/logo.png";
 import Image from "next/image";
 import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 function AboutUs() {
   return (
     <div>
@@ -47,6 +48,7 @@ function AboutUs() {
           <hr className="h-px mt-3 mb-8 bg-yellow-700 border-0 " />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

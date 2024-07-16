@@ -8,10 +8,32 @@ import Page2 from "./Page2";
 import Page3 from "./Page3";
 import Page4 from "./Page4";
 import Page5 from "./Page5";
-import LinearDeterminate from "./ProgressBar";
-import { v4 as uuidv4 } from 'uuid';
+import Footer from "../Components/Footer";
+import NotFound from "../not-found";
+import axios from "axios";
+import Loader from "../Components/Loader";
+
 
 const SignupController = ({decodedToken}) => {
+  const searchParams=useSearchParams();
+  const [decodedtoken, setdecodedtoken] = useState("")
+  const [validpage, setvalidpage] = useState(null);
+
+  useEffect(() => {
+    const token = searchParams.get('token');
+    const checktoken=async()=>{
+      const res=await axios.post('/api/verifytoken',{token});
+      if(res.data.success){
+        setdecodedtoken(res.data.data);
+        setvalidpage(true);
+      }
+      else{
+        setvalidpage(false);
+      }
+    }
+    checktoken();  
+  }, [])
+  
 
   const [values, setValues] = useState({
     restaurantname:decodedToken?.restaurant_name ,
@@ -47,12 +69,7 @@ const SignupController = ({decodedToken}) => {
     }));
   };
 
-  // useEffect(() => {
-  //   console.log(values);
-  // }, [values]);
-  // useEffect(() => {
-  //   appendvalues("name", "sudip");
-  // }, []);
+  
 
   const [page, setpage] = useState(0);
   const handleForward = () => {
@@ -74,6 +91,7 @@ const SignupController = ({decodedToken}) => {
               handleForward={handleForward}
               handleBackward={handleBackward}
             />
+            
           </>
         );
 
@@ -87,6 +105,7 @@ const SignupController = ({decodedToken}) => {
               handleForward={handleForward}
               handleBackward={handleBackward}
             />
+            
           </>
         );
       case 2:
@@ -99,6 +118,7 @@ const SignupController = ({decodedToken}) => {
               handleForward={handleForward}
               handleBackward={handleBackward}
             />
+            
           </>
         );
 
@@ -112,6 +132,7 @@ const SignupController = ({decodedToken}) => {
               handleForward={handleForward}
               handleBackward={handleBackward}
             />
+            
           </>
         );
 
@@ -125,21 +146,34 @@ const SignupController = ({decodedToken}) => {
               handleForward={handleForward}
               handleBackward={handleBackward}
             />
+            
           </>
         );
 
       default:
-        return <></>;
+        return <><NotFound/></>;
     }
   };
 
+  if(validpage==null){
+    return(
+      <div><Loader/></div>
+    )
+  }
+  if(!validpage){
+    return(
+      <div><NotFound/><Footer/></div>
+    )
+  }
+
+  if(validpage){
   return (
     <>
       <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-[#FFF9EA] to-[#fce9bb]">
         {renderpage(page)}
       </div>
     </>
-  );
+  )}
 };
 
 export default SignupController;

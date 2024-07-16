@@ -13,7 +13,7 @@ export default function Home() {
     if (token) {
       try {
         const decoded = jwt.decode(token);
-        console.log(decoded);
+        //console.log(decoded);
         setDecodedToken(decoded);
       } catch (error) {
         console.error("Invalid token:", error);
